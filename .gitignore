@@ -6,6 +6,7 @@
 # Node artifact files
 node_modules/
 dist/
+ios/Pods/
 
 # Compiled Java class files
 *.class
@@ -48,3 +49,14 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# Visual Studio Code
+#
+.vscode/
