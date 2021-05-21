@@ -7,11 +7,15 @@ const Header = () => {
     return (
         <SafeAreaView>
             <View style={styles.header}>
-                <View style={styles.headerProfile}>
+                {/* <View style={styles.headerProfile}>
                     <ProfilePicture shouldShowBatch={true} />
-                </View>
+                </View> */}
+                <View style={{width: "85%", alignItems: 'center'}}>
                 <Text style={styles.headerTexts}>Kamaee</Text>
+                </View>
+                <View style={{width: "15%", flexDirection: 'row-reverse'}}>
                 <HeaderButton />
+                </View>
             </View>
         </SafeAreaView>
     )
@@ -21,6 +25,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#255ed6',
         justifyContent: 'space-between',
+        width: '100%'
         // position:'absolute'
     },
     headerProfile: {
@@ -31,7 +36,7 @@ const styles = StyleSheet.create({
         color: '#f9f9f9',
         fontWeight: 'bold',
         fontSize: 30,
-        padding: 10
+        padding: 10,
     }
 });
 export default Header;
