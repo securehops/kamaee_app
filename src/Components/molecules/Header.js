@@ -10,11 +10,11 @@ const Header = () => {
                 {/* <View style={styles.headerProfile}>
                     <ProfilePicture shouldShowBatch={true} />
                 </View> */}
-                <View style={{width: "85%", alignItems: 'center'}}>
-                <Text style={styles.headerTexts}>Kamaee</Text>
+                <View style={{ width: "85%", alignItems: 'center' }}>
+                    <Text style={styles.headerTexts}>Kamaee</Text>
                 </View>
-                <View style={{width: "15%", flexDirection: 'row-reverse'}}>
-                <HeaderButton />
+                <View style={{ width: "15%", flexDirection: 'row-reverse' }}>
+                    <HeaderButton />
                 </View>
             </View>
         </SafeAreaView>

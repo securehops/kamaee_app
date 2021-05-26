@@ -2,26 +2,20 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import IconName from 'react-native-vector-icons/Ionicons';
 import IconName1 from 'react-native-vector-icons/FontAwesome';
-import IconName2 from 'react-native-vector-icons/FontAwesome5';
+import SellerInfo from '../../Components/Profile_screen_components/SellerInfo'
+import BuyerInfo from '../../Components/Profile_screen_components/BuyerInfo';
 
 const ProfileScreen = () => {
     const [toggle, setToggle] = useState(false);
-    const [data, setData] = useState([
-        { icon: "dollar-sign", icon_description: "Earnings", key: 1 },
-        { icon: "clipboard-list", icon_description: "Buyers requests", key: 2 },
-        { icon: "gifts", icon_description: "Offer templates", key: 3 },
-        { icon: "share", icon_description: "Share my gigs", key: 4 },
-        { icon: "book", icon_description: "My gigs", key: 5 },
-
-    ]);
 
     const onPress = (index) => {
 
     }
+    
     return (
         <View style={styles.container}>
             <View style={styles.profile_seller_container}>
-                <View style={styles.profile}>
+                <View style={[styles.profile, {backgroundColor: toggle? "black" : "gray"}]}>
                     <View style={styles.profile_picture_container}>
                         <Image style={styles.profile_picture}
                             source={require("../../Assets/happygirl.jpg")}>
@@ -34,40 +28,18 @@ const ProfileScreen = () => {
                 </View>
                 <View style={styles.seller_container}>
                     <View style={styles.icon_container}>
-                        <IconName name={"briefcase-outline"} size={25} color={"green"} />
+                        <IconName name={"briefcase-outline"} size={25} color={"dodgerblue"} />
                     </View>
                     <View style={styles.seller_text_container}>
                         <Text style={styles.seller_text}>Seller Mode</Text>
                     </View>
                     <View style={styles.toggle_button_container}>
-                        <IconName1 name={toggle ? "toggle-on" : "toggle-off"} size={25} color={"green"} onPress={() => setToggle(prevToggle => !prevToggle)} />
+                        <IconName1 name={toggle ? "toggle-on" : "toggle-off"} size={25} color={"dodgerblue"} onPress={() => setToggle(prevToggle => !prevToggle)} />
                     </View>
                 </View>
             </View>
             <ScrollView style={styles.headings_container}>
-                <View style={styles.kamaee_text_container}>
-                    <Text style={styles.kamaee_text}>My Kamaee</Text>
-                </View>
-                <View style={styles.kamaee_flatlist_container}>
-                    <FlatList
-                        data={data}
-                        renderItem={({ item, index }) =>
-                            <TouchableOpacity onPress={() => { onPress(index) }}>
-                                <View style={styles.sub_heading_container}>
-                                    <View style={styles.heading_icon_container}>
-                                        <IconName2 name={item.icon} size={23} color={"gray"} />
-                                    </View>
-                                    <View style={styles.heading_description_container}>
-                                        <Text style={styles.heading_description_text}>{item.icon_description}</Text>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        }
-                    />
-                </View>
-                <View style={styles.kamaee_text_container}>
-                    <Text style={styles.kamaee_text}>General</Text>
-                </View>
+                {toggle? <SellerInfo/> : <BuyerInfo/>}
             </ScrollView>
         </View>
 
@@ -87,7 +59,6 @@ const styles = StyleSheet.create({
     profile: {
         width: "100%",
         height: "90%",
-        backgroundColor: 'black',
         flexDirection: 'column',
     },
     seller_container: {
@@ -163,44 +134,6 @@ const styles = StyleSheet.create({
         width: "100%",
         flexDirection: 'column',
         marginTop: "6%"
-    },
-    kamaee_text_container: {
-        width: "100%",
-        height: "auto",
-        marginLeft: 20,
-        marginTop: 20,
-    },
-    kamaee_text: {
-        fontSize: 28,
-        fontWeight: "700",
-    },
-    sub_heading_container: {
-        width: "100%",
-        height: 40,
-        marginTop: 10,
-        marginLeft: 20,
-        flexDirection: "row",
-        marginBottom: 5,
-    },
-    heading_icon_container: {
-        height: 40,
-        width: "15%",
-        justifyContent: "center",
-    },
-    heading_description_container: {
-        width: "90%",
-        height: 40,
-        justifyContent: "center",
-    },
-    heading_description_text: {
-        fontSize: 20,
-    },
-    kamaee_flatlist_container: {
-        width: "100%",
-        height: "auto",
-        borderBottomColor: "lightgray",
-        borderBottomWidth: 1,
-
     },
 });
 

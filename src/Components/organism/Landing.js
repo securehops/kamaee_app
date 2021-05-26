@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 
 const Landing = ({ didPressSignUp, didPressSignIn }) => {
 
 
 
     return (
+        <SafeAreaView>
         <View>
             <View style={styles.TopAbsoluteView}>
 
@@ -28,6 +29,7 @@ const Landing = ({ didPressSignUp, didPressSignIn }) => {
 
 
         </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
