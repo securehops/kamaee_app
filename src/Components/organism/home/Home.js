@@ -12,51 +12,64 @@ const Home = ({ didPressInput, didPressItem }) => {
     const [list, setList] = useState([
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 1
+
         },
         {
             title: "Digital Marketing 1",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 2
         },
         {
             title: "Digital Marketing 2",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 3
         },
         {
             title: "Digital Marketing 3",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 4
         },
         {
             title: "Digital Marketing 4",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 5
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 6
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 7
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 8
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 9
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 10
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 11
         },
         {
             title: "Digital Marketing",
-            description: "Make your business grow on Social platforms"
+            description: "Make your business grow on Social platforms",
+            key: 12
         }]);
     return (
         <SafeAreaView>

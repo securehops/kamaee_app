@@ -7,9 +7,6 @@ const Header = () => {
     return (
         <SafeAreaView>
             <View style={styles.header}>
-                {/* <View style={styles.headerProfile}>
-                    <ProfilePicture shouldShowBatch={true} />
-                </View> */}
                 <View style={{ width: "85%", alignItems: 'center' }}>
                     <Text style={styles.headerTexts}>Kamaee</Text>
                 </View>

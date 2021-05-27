@@ -3,12 +3,44 @@ import { Text, View, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFee
 import IconName from 'react-native-vector-icons/Ionicons';
 import IconName1 from 'react-native-vector-icons/FontAwesome';
 import IconName2 from 'react-native-vector-icons/FontAwesome5';
+import { MainStackNavigator } from '../../Screens/Navigations/StackNavigator';
+import Gigs from "../organism/CodingGigs/CodingGigs";
 
-export default BuyerInfo = () => {
+export default BuyerInfo = (props) => {
 
-    const onPress = (index) => {
-
+    const Kamaeefields = (index) => {
+        if(index==0)
+        {
+            props.navigation.navigate("codinggigs")
+        }
+        else if(index==1)
+        {
+            props.navigation.navigate("looking")
+        }
     }
+
+    const buyingfields = (index) => {
+        if(index==0)
+        {
+            props.navigation.navigate("home")
+        }
+        if(index==1)
+        {
+            props.navigation.navigate("newrequest")
+        }
+        if(index==2)
+        {
+            props.navigation.navigate("myrequests")
+        }
+    }
+
+    const genralfields = (index) => {
+        if(index==0)
+        {
+            props.navigation.navigate("payment")
+        }
+    }
+
     const [toggle, setToggle] = useState(false);
 
     const [data, setData] = useState([ 
@@ -24,9 +56,9 @@ export default BuyerInfo = () => {
     ]);
 
     const [data2, setData2] = useState([
-        { icon: "card", icon_description: "Payments", key: 2 },
-        { icon: "arrow-redo-circle-sharp", icon_description: "Invite friends", key: 4 },
-        { icon: "help-buoy", icon_description: "Support", key: 5 },
+        { icon: "card", icon_description: "Payments", key: 1 },
+        { icon: "arrow-redo-circle-sharp", icon_description: "Invite friends", key: 2 },
+        { icon: "help-buoy", icon_description: "Support", key: 3 },
 
     ]);
     return (
@@ -38,7 +70,7 @@ export default BuyerInfo = () => {
                 <FlatList
                     data={data}
                     renderItem={({ item, index }) =>
-                        <TouchableOpacity onPress={() => { onPress(index) }}>
+                        <TouchableOpacity onPress={() => { Kamaeefields(index) }}>
                             <View style={styles.sub_heading_container}>
                                 <View style={styles.heading_icon_container}>
                                     <IconName name={item.icon} size={23} color={"gray"} />
@@ -58,7 +90,7 @@ export default BuyerInfo = () => {
                 <FlatList
                     data={data1}
                     renderItem={({ item, index }) =>
-                        <TouchableOpacity onPress={() => { onPress(index) }}>
+                        <TouchableOpacity onPress={() => { buyingfields(index) }}>
                             <View style={styles.sub_heading_container}>
                                 <View style={styles.heading_icon_container}>
                                     <IconName name={item.icon} size={23} color={"gray"} />
@@ -91,7 +123,7 @@ export default BuyerInfo = () => {
                 <FlatList
                     data={data2}
                     renderItem={({ item, index }) =>
-                        <TouchableOpacity onPress={() => { onPress(index) }}>
+                        <TouchableOpacity onPress={() => { genralfields(index) }}>
                             <View style={styles.sub_heading_container}>
                                 <View style={styles.heading_icon_container}>
                                     <IconName name={item.icon} size={23} color={"gray"} />

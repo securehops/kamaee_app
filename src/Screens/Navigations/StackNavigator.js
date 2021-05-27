@@ -1,6 +1,6 @@
 import React from "react";
 import SignInScreen from '../sign-in-screen'
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, HeaderBackButton } from "@react-navigation/stack";
 import SignUp from '../Sign-up-screen';
 import HomeScreen from '../Home/index';
 import Looking from "../LookingForScreen";
@@ -27,6 +27,7 @@ const Stack = createStackNavigator();
 const OnBoardStack = createStackNavigator();
 export const MainStackNavigator = () => {
   return (
+    
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {/* <Stack.Screen name="landing" component={LandingScreen} />
       <Stack.Screen name="signin" component={SignInScreen} />
@@ -45,6 +46,7 @@ export const MainStackNavigator = () => {
       <Stack.Screen name="newrequest" component={MyRequestsScreen} />
       <Stack.Screen name="myrequests" component={PostRequests} />
     </Stack.Navigator>
+    
   );
 };
 export const OnBoardingStack = () => {
@@ -61,22 +63,10 @@ const Drawer = createDrawerNavigator()
 export const DrawerStack = () => {
   return (
     <>
-      <Header />
-      <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-        <Drawer.Screen name='jhg' component={UserTabNavigator}
-          options={{
-            title: 'abc',
-          }}
-        />
-        <Drawer.Screen name='home' component={MyDashboardScreen} />
-        <Drawer.Screen name='Saved' component={OurPicksScreen} />
-        <Drawer.Screen name='Manag0rders' component={HomeScreen} />
-        <Drawer.Screen name='Managerequests' component={MyRequestsScreen} />
-        <Drawer.Screen name='myrequests' component={PostRequests} />
-        <Drawer.Screen name='Payments' component={InboxScreen} />
-        <Drawer.Screen name='InviteFriends' component={InboxScreen} />
-
-      </Drawer.Navigator>
+    <Header/>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name='jhg' component={UserTabNavigator}/>
+      </Stack.Navigator>
     </>
   )
 }
@@ -86,6 +76,7 @@ export const Navigation = () => {
     <NavigationContainer>
       <Main.Navigator screenOptions={{ headerShown: false }}>
         <Main.Screen name='onboardingScreens' component={OnBoardingStack} />
+        <Main.Screen name='MainNavigator' component={MainStackNavigator} />
         <Main.Screen name='DrawerScreens' component={DrawerStack} />
       </Main.Navigator>
     </NavigationContainer>

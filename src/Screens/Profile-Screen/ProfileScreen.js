@@ -5,7 +5,8 @@ import IconName1 from 'react-native-vector-icons/FontAwesome';
 import SellerInfo from '../../Components/Profile_screen_components/SellerInfo'
 import BuyerInfo from '../../Components/Profile_screen_components/BuyerInfo';
 
-const ProfileScreen = () => {
+
+const ProfileScreen = (props) => {
     const [toggle, setToggle] = useState(false);
 
     const onPress = (index) => {
@@ -39,7 +40,7 @@ const ProfileScreen = () => {
                 </View>
             </View>
             <ScrollView style={styles.headings_container}>
-                {toggle? <SellerInfo/> : <BuyerInfo/>}
+                {toggle? <SellerInfo/> : <BuyerInfo {...props}/>}
             </ScrollView>
         </View>
 
