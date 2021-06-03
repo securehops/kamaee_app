@@ -23,6 +23,8 @@ import ConversationScreen from "../ChatScreen/ConversationScreen";
 import MyOrdersScreen from "../MyOrders";
 import GigsScreen from "../MyGigs";
 import { NavigationContainer } from "@react-navigation/native";
+import Earnings from '../Earnings/Earnings'
+import Template from '../../Screens/OfferTemplate/Template'
 const Stack = createStackNavigator();
 const OnBoardStack = createStackNavigator();
 export const MainStackNavigator = () => {
@@ -45,6 +47,8 @@ export const MainStackNavigator = () => {
       <Stack.Screen name="conversation" component={ConversationScreen} />
       <Stack.Screen name="newrequest" component={MyRequestsScreen} />
       <Stack.Screen name="myrequests" component={PostRequests} />
+      <Stack.Screen name="earnings" component={Earnings} />
+      <Stack.Screen name="template" component={Template} />
     </Stack.Navigator>
     
   );

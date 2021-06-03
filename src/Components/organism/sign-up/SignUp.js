@@ -5,6 +5,8 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { ScrollView } from 'react-native-gesture-handler';
 const SignUp = ({ didPressBack, didPressSignUp }) => {
     const [checkbox, setCheckbox] = useState(false)
+    const [email, setEmail] = useState()
+    const [pass, setPass] = useState()
 
     const onPressCheckBox = () => {
         setCheckbox(!checkbox)
@@ -25,11 +27,24 @@ const SignUp = ({ didPressBack, didPressSignUp }) => {
                     </View>
 
                     <View style={styles.inputView}>
-                        <TextInput placeholder='First & Last Name' style={styles.input} />
-                        <TextInput placeholder='Email' style={styles.input} />
-                        <TextInput placeholder='Mobile Phone' keyboardType={'numeric'} style={styles.input} />
-                        <TextInput placeholder='Group Special Code (optional)' secureTextEntry={true} style={styles.input} />
-                        <TextInput placeholder='Password' secureTextEntry={true} style={styles.input} />
+                        <TextInput placeholderTextColor="gray" placeholder='First & Last Name' style={styles.input} />
+                        <TextInput
+                            placeholderTextColor="gray"
+                            value = {email}
+                            placeholder='Email'
+                            style={styles.input}
+                            onChangeText = {email => setEmail(email)}
+                        />
+                        <TextInput placeholderTextColor="gray" placeholder='Mobile Phone' keyboardType={'numeric'} style={styles.input} />
+                        <TextInput placeholderTextColor="gray" placeholder='Group Special Code (optional)' secureTextEntry={true} style={styles.input} />
+                        <TextInput
+                            placeholderTextColor="gray"
+                            placeholder='Password'
+                            value = {pass}
+                            secureTextEntry={true}
+                            style={styles.input}
+                            onChangeText = {pass => setPass(pass)}
+                        />
                     </View>
                     <View style={{ flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 20, justifyContent: 'space-around' }}>
                         <CheckBox style={{ borderRadius: 5 }} checked={checkbox} onPress={() => onPressCheckBox()} />

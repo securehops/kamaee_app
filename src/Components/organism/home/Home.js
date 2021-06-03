@@ -9,6 +9,7 @@ import InputIcon from '../../atoms/SearchIcon';
 
 
 const Home = ({ didPressInput, didPressItem }) => {
+    console.disableYellowBox = true
     const [list, setList] = useState([
         {
             title: "Digital Marketing",

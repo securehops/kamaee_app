@@ -4,10 +4,16 @@ import IconName from 'react-native-vector-icons/Ionicons';
 import IconName1 from 'react-native-vector-icons/FontAwesome';
 import IconName2 from 'react-native-vector-icons/FontAwesome5';
 
-export default SellerInfo = () => {
+export default SellerInfo = (props) => {
 
-    const onPress = (index) => {
-
+    const onPressKamaee = (index) => {
+        if(index==0)
+        {
+            props.navigation.navigate("earnings")
+        }else if(index==2)
+        {
+            props.navigation.navigate("template")
+        }
     }
     const [toggle, setToggle] = useState(false);
     const [data, setData] = useState([
@@ -34,7 +40,7 @@ export default SellerInfo = () => {
                 <FlatList
                     data={data}
                     renderItem={({ item, index }) =>
-                        <TouchableOpacity onPress={() => { onPress(index) }}>
+                        <TouchableOpacity onPress={() => { onPressKamaee(index) }}>
                             <View style={styles.sub_heading_container}>
                                 <View style={styles.heading_icon_container}>
                                     <IconName2 name={item.icon} size={23} color={"gray"} />
@@ -67,7 +73,7 @@ export default SellerInfo = () => {
                 <FlatList
                     data={data2}
                     renderItem={({ item, index }) =>
-                        <TouchableOpacity onPress={() => { onPress(index) }}>
+                        <TouchableOpacity onPress={() => { onPressGeneral(index) }}>
                             <View style={styles.sub_heading_container}>
                                 <View style={styles.heading_icon_container}>
                                     <IconName name={item.icon} size={23} color={"gray"} />

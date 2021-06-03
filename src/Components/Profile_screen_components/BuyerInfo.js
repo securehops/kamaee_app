@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import IconName from 'react-native-vector-icons/Ionicons';
 import IconName1 from 'react-native-vector-icons/FontAwesome';
-import IconName2 from 'react-native-vector-icons/FontAwesome5';
-import { MainStackNavigator } from '../../Screens/Navigations/StackNavigator';
-import Gigs from "../organism/CodingGigs/CodingGigs";
 
 export default BuyerInfo = (props) => {
 

@@ -3,7 +3,31 @@ import { Text, View, StyleSheet, TextInput, TouchableOpacity, SafeAreaView } fro
 import { CheckBox } from 'native-base';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import axios from 'axios';
+
+
 const SignIn = ({ didPressSignIn, didPressBack }) => {
+
+    const Api = () => {
+
+        // let data = { 'email': email, 'password': password }
+        // return fetch("http://192.168.100.64:8000/api/signin", {
+        //     headers: {
+        //         Accept: "application/json",
+        //         'Content-Type': 'application/json',
+        //     },
+        //     method: 'POST',
+        //     body: JSON.stringify(data)
+        // }).then((response) => response.json())
+        // .then((response) => {
+        //     if(JSON.stringify(response.error))
+        //     {
+        //     alert(JSON.stringify(response.error))
+        //     }else{
+                didPressSignIn()
+    //         }
+    //     })
+    };
+
     const [checkbox, setCheckbox] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,19 +37,6 @@ const SignIn = ({ didPressSignIn, didPressBack }) => {
         setCheckbox(!checkbox)
 
     }
-    // const loginPost = () => {
-    //     let obj = {
-    //         email: email,
-    //         password: password,
-    //     }
-    //     // axios.post('http://35.228.151.19:8082/api/auth/login', obj).then(function (response) {
-    //         console.log(response.data);
-    //     })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         });
-    // }
-
 
     return (
         <SafeAreaView>
@@ -40,10 +51,23 @@ const SignIn = ({ didPressSignIn, didPressBack }) => {
 
                 <View style={styles.inputView}>
                     {/* <TextInput placeholder='First & Last Name' style={styles.input} /> */}
-                    <TextInput placeholder='Email' onChangeText={setEmail} style={styles.input} />
+                    <TextInput
+                        placeholder='Email'
+                        value={email}
+                        placeholderTextColor="gray"
+                        onChangeText={email => setEmail(email)}
+                        style={styles.input}
+                    />
 
                 </View>
-                <TextInput placeholder='Password' onChangeText={setPassword} secureTextEntry={true} style={styles.inputWithoutShadow} />
+                <TextInput
+                    placeholder='Password'
+                    placeholderTextColor="gray"
+                    value={password}
+                    onChangeText={password => setPassword(password)}
+                    secureTextEntry={true}
+                    style={styles.inputWithoutShadow}
+                />
                 <View style={{ justifyContent: 'space-between', flexDirection: 'row', paddingHorizontal: 20, paddingVertical: 20, }}>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ width: 20, height: 30 }}>
@@ -60,7 +84,7 @@ const SignIn = ({ didPressSignIn, didPressBack }) => {
                 </View>
                 <View style={{ marginHorizontal: 20 }}>
                     {/* <TouchableOpacity style={styles.button} onPress={() => didPressSignIn()}> */}
-                    <TouchableOpacity style={styles.button} onPress={() => didPressSignIn()}>
+                    <TouchableOpacity style={styles.button} onPress={() => Api()}>
 
                         <Text style={styles.buttonText}>Sign In</Text>
                     </TouchableOpacity>

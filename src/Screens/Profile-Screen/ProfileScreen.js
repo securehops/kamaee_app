@@ -8,15 +8,11 @@ import BuyerInfo from '../../Components/Profile_screen_components/BuyerInfo';
 
 const ProfileScreen = (props) => {
     const [toggle, setToggle] = useState(false);
-
-    const onPress = (index) => {
-
-    }
-    
+console.disableYellowBox = true
     return (
         <View style={styles.container}>
             <View style={styles.profile_seller_container}>
-                <View style={[styles.profile, {backgroundColor: toggle? "black" : "gray"}]}>
+                <View style={styles.profile}>
                     <View style={styles.profile_picture_container}>
                         <Image style={styles.profile_picture}
                             source={require("../../Assets/happygirl.jpg")}>
@@ -40,7 +36,7 @@ const ProfileScreen = (props) => {
                 </View>
             </View>
             <ScrollView style={styles.headings_container}>
-                {toggle? <SellerInfo/> : <BuyerInfo {...props}/>}
+                {toggle? <SellerInfo {...props}/> : <BuyerInfo {...props}/>}
             </ScrollView>
         </View>
 
@@ -55,12 +51,15 @@ const styles = StyleSheet.create({
     },
     profile_seller_container: {
         width: "100%",
-        height: "35%",
+        height: "30%",
     },
     profile: {
         width: "100%",
         height: "90%",
         flexDirection: 'column',
+        backgroundColor: "#255ed6",
+        borderTopWidth: 0.5,
+        borderTopColor: "dodgerblue",
     },
     seller_container: {
         width: "95%",
