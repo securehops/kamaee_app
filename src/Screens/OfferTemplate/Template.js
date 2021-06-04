@@ -192,6 +192,7 @@ const styles = StyleSheet.create({
         height: "30%",
         justifyContent: 'center',
         marginLeft: 10,
+        
     },
     describe_text: {
         color: "black",
@@ -231,7 +232,8 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "25%",
         marginLeft: 10,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        
     },
     payment_option_container: {
         width: '96%',

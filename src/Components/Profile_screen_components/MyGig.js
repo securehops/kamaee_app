@@ -32,14 +32,14 @@ const styles = StyleSheet.create({
     },
     heading_text: {
         color: "white",
-        fontSize: 16,
-        fontWeight: "500",
+        fontSize: 18,
+        fontWeight: "600",
         marginLeft: 10,
     },
     description_text: {
         color: "white",
-        fontSize: 12,
-        fontWeight: "400",
+        fontSize: 14,
+        fontWeight: "500",
         marginLeft: 10
     },
 });

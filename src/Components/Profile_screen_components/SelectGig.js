@@ -10,7 +10,7 @@ export default SelectGig = () => {
             </View>
             <View style={styles.gig_container}>
                 <View style={styles.gig}>
-                    <MyGig title={"Mobile Game"} description={"Make an effective game by using java and Php"} />
+                    <MyGig title={"Selected Gig"} description={"Make an effective game by using java and Php"} />
                 </View>
                 <TouchableOpacity style={styles.select_gig}>
                     <Text style={{ fontSize: 24, fontWeight: "500", color: "#255ed6" }}>Select Gig</Text>

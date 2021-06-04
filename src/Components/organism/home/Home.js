@@ -1,77 +1,110 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Image } from 'react-native';
 import { FlatList, TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import Card from '../../molecules/card';
 import Fonts from '../../../customStyles/Fonts';
-import headerBackgrouond from '../../../customStyles/colors';
-import { Icons } from '../../../Assets/icon';
 import InputIcon from '../../atoms/SearchIcon';
-
+import Categories from '../../organism/home/categories'
 
 const Home = ({ didPressInput, didPressItem }) => {
     console.disableYellowBox = true
-    const [list, setList] = useState([
+    var list = [
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
+            title: 'Social Media Design',
+            image: require('../../../Assets/images/mediadesign.jpeg'),
             key: 1
-
         },
         {
-            title: "Digital Marketing 1",
-            description: "Make your business grow on Social platforms",
+            title: 'Photoshop Editing',
+            image: require('../../../Assets/images/photoshop.jpeg'),
             key: 2
         },
         {
-            title: "Digital Marketing 2",
-            description: "Make your business grow on Social platforms",
+            title: 'Social Media Marketing',
+            image: require('../../../Assets/images/socialmedia.jpeg'),
             key: 3
         },
         {
-            title: "Digital Marketing 3",
-            description: "Make your business grow on Social platforms",
+            title: 'Short Ads',
+            image: require('../../../Assets/images/ads.png'),
             key: 4
         },
         {
-            title: "Digital Marketing 4",
-            description: "Make your business grow on Social platforms",
+            title: 'Animations',
+            image: require('../../../Assets/images/animation.jpeg'),
             key: 5
         },
+    ]
+    var list2 = [
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 6
+            title: 'Logo Design',
+            image: require('../../../Assets/images/logo.jpeg'),
+            key: 1
         },
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 7
+            title: 'Brand Style',
+            image: require('../../../Assets/images/brand.jpeg'),
+            key: 2
         },
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 8
+            title: 'Business Cards & Stationary',
+            image: require('../../../Assets/images/stationary.jpeg'),
+            key: 3
         },
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 9
+            title: 'Logo Animation',
+            image: require('../../../Assets/images/logoanimation.png'),
+            key: 4
         },
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 10
+            title: 'Flyer Design',
+            image: require('../../../Assets/images/flyer.jpeg'),
+            key: 5
+        },
+    ]
+    var list3 = [
+        {
+            title: 'Architectural Design',
+            image: require('../../../Assets/images/arc.jpeg'),
+            key: 1
         },
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 11
+            title: 'Photoshop Editing',
+            image: require('../../../Assets/images/photoshop.jpeg'),
+            key: 2
         },
         {
-            title: "Digital Marketing",
-            description: "Make your business grow on Social platforms",
-            key: 12
-        }]);
+            title: 'Vector Tracing',
+            image: require('../../../Assets/images/vector.jpeg'),
+            key: 3
+        },
+    ]
+    var list4 = [
+        {
+            title: 'Brochure Design',
+            image: require('../../../Assets/images/broucher.jpeg'),
+            key: 1
+        },
+        {
+            title: 'Catalog Design',
+            image: require('../../../Assets/images/catalog.jpeg'),
+            key: 2
+        },
+        {
+            title: 'Flyer Design',
+            image: require('../../../Assets/images/flyer.jpeg'),
+            key: 3
+        },
+        {
+            title: 'Poster Design',
+            image: require('../../../Assets/images/poster.jpeg'),
+            key: 4
+        },
+        {
+            title: 'Menu Design',
+            image: require('../../../Assets/images/menu.jpeg'),
+            key: 5
+        },
+    ]
     return (
         <SafeAreaView>
             <View style={styles.container}>
@@ -91,20 +124,21 @@ const Home = ({ didPressInput, didPressItem }) => {
                             </View>
                         </View>
                     </TouchableWithoutFeedback>
-                    <View style={styles.trending}>
-                        <Text style={styles.heading}>Trending</Text>
-                    </View>
-
                 </View>
-                <FlatList style={styles.flatList}
-                    data={list}
-                    renderItem={({ item }) =>
-                        <TouchableOpacity onPress={() => didPressItem()}>
-                            <Card item={item} />
-                        </TouchableOpacity>
-
-                    }
-                />
+                <ScrollView style={styles.all_categories_container}>
+                    <View style={styles.first_category_container}>
+                        <Categories title="Social Media Content" data={list} />
+                    </View>
+                    <View style={styles.first_category_container}>
+                        <Categories title="Brand Identity" data={list2} />
+                    </View>
+                    <View style={styles.first_category_container}>
+                        <Categories title="Image Editing" data={list3} />
+                    </View>
+                    <View style={styles.first_category_container}>
+                        <Categories title="Print Design" data={list4} />
+                    </View>
+                </ScrollView>
             </View>
         </SafeAreaView>
     )
@@ -115,7 +149,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 40,
         borderBottomRightRadius: 40,
         paddingBottom: 60,
-        position: 'absolute',
+        height: '25%',
         width: '100%',
     },
     headerCenter: {
@@ -147,12 +181,14 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     container: {
-        paddingTop: 220,
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
     },
     InputView: {
         width: '90%',
-        backgroundColor:'red',
-        borderRadius:20,
+        backgroundColor: 'red',
+        borderRadius: 20,
         alignSelf: 'center'
     },
     inputPlaceholder: {
@@ -171,7 +207,18 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 10,
         top: 5,
-    }
-
+    },
+    all_categories_container: {
+        width: '100%',
+        marginTop: 10,
+    },
+    first_category_container: {
+        width: "98%",
+        height: 220,
+        alignSelf: 'center',
+        flexDirection: 'column',
+        marginTop: 5,
+        marginBottom: 5,
+    },
 });
 export default Home;
