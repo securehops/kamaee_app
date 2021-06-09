@@ -6,7 +6,7 @@ const Landing = ({ didPressSignUp, didPressSignIn }) => {
 
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{marginTop: -15}}>
         <View>
             <View style={styles.TopAbsoluteView}>
 

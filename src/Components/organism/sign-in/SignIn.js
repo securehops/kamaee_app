@@ -39,7 +39,7 @@ const SignIn = ({ didPressSignIn, didPressBack }) => {
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{marginTop: -15}}>
             <View>
                 <View style={styles.TopAbsoluteView}>
                     <TouchableOpacity style={{ paddingRight: 300 }} onPress={() => didPressBack()}>

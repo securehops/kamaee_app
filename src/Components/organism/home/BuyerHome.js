@@ -3,9 +3,12 @@ import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Ima
 import { FlatList, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Fonts from '../../../customStyles/Fonts';
 import InputIcon from '../../atoms/SearchIcon';
-import Categories from '../../organism/home/categories'
+import Categories from './categories'
+// import { AsyncStorage } from '@react-native-community/async-storage'
 
-const Home = ({ didPressInput, didPressItem }) => {
+
+const BuyerHome = ({ didPressInput, didPressItem }) => {
+
     console.disableYellowBox = true
     var list = [
         {
@@ -116,7 +119,7 @@ const Home = ({ didPressInput, didPressItem }) => {
                         <Text style={styles.subHeading2}> Let's find some services for your business</Text>
 
                     </View>
-                    <TouchableWithoutFeedback onPress={() => didPressInput()}>
+                    <TouchableWithoutFeedback onPress={() => didPressItem()}>
                         <View style={styles.InputView}>
                             <Text style={styles.inputPlaceholder}> Looking for ... </Text>
                             <View style={styles.inputIcon}>
@@ -221,4 +224,4 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
-export default Home;
+export default BuyerHome;

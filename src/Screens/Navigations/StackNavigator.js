@@ -25,6 +25,8 @@ import GigsScreen from "../MyGigs";
 import { NavigationContainer } from "@react-navigation/native";
 import Earnings from '../Earnings/Earnings'
 import Template from '../../Screens/OfferTemplate/Template'
+import SellerGig from '../../Screens/SellerGig/SellerGig'
+import SellerProfile from '../../Screens/SellerProfile/SellerProfile'
 const Stack = createStackNavigator();
 const OnBoardStack = createStackNavigator();
 export const MainStackNavigator = () => {
@@ -49,6 +51,8 @@ export const MainStackNavigator = () => {
       <Stack.Screen name="myrequests" component={PostRequests} />
       <Stack.Screen name="earnings" component={Earnings} />
       <Stack.Screen name="template" component={Template} />
+      <Stack.Screen name="sellergig" component={SellerGig} />
+      <Stack.Screen name="sellerprofile" component={SellerProfile} />
     </Stack.Navigator>
     
   );

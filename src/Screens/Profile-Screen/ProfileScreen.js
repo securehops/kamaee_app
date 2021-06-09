@@ -1,14 +1,31 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, SafeAreaView, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, AsyncStorage, Image, ScrollView,} from 'react-native';
 import IconName from 'react-native-vector-icons/Ionicons';
 import IconName1 from 'react-native-vector-icons/FontAwesome';
 import SellerInfo from '../../Components/Profile_screen_components/SellerInfo'
 import BuyerInfo from '../../Components/Profile_screen_components/BuyerInfo';
+// import { AsyncStorage } from '@react-native-community/async-storage'
 
 
 const ProfileScreen = (props) => {
     const [toggle, setToggle] = useState(false);
-console.disableYellowBox = true
+    console.disableYellowBox = true
+
+    async function toggleButton() {
+        setToggle(prevToggle => !prevToggle)
+        if (toggle) {
+            try {
+                await AsyncStorage.setItem('toggle', JSON.stringify(true));
+            } catch (error) {
+            }
+        } else {
+            try {
+                await AsyncStorage.setItem('toggle', JSON.stringify(false));
+            } catch (error) {
+            }
+        }
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.profile_seller_container}>
@@ -31,12 +48,12 @@ console.disableYellowBox = true
                         <Text style={styles.seller_text}>Seller Mode</Text>
                     </View>
                     <View style={styles.toggle_button_container}>
-                        <IconName1 name={toggle ? "toggle-on" : "toggle-off"} size={25} color={"dodgerblue"} onPress={() => setToggle(prevToggle => !prevToggle)} />
+                        <IconName1 name={toggle ? "toggle-on" : "toggle-off"} size={25} color={"dodgerblue"} onPress={() => toggleButton()} />
                     </View>
                 </View>
             </View>
             <ScrollView style={styles.headings_container}>
-                {toggle? <SellerInfo {...props}/> : <BuyerInfo {...props}/>}
+                {toggle ? <SellerInfo {...props} /> : <BuyerInfo {...props} />}
             </ScrollView>
         </View>
 

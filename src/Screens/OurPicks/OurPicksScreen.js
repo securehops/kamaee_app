@@ -5,7 +5,7 @@ const OurPicksScreen = (props) => {
 
     return (
         <View>
-            <OurPicks didPressItem={() => { props.navigation.navigate('codinggigs') }} />
+            <OurPicks didPressItem={() => { props.navigation.navigate('sellergig') }} />
         </View>
     )
 }

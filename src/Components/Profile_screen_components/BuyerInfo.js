@@ -8,7 +8,7 @@ export default BuyerInfo = (props) => {
     const Kamaeefields = (index) => {
         if(index==0)
         {
-            props.navigation.navigate("codinggigs")
+            // props.navigation.navigate("codinggigs")
         }
         else if(index==1)
         {
@@ -19,7 +19,7 @@ export default BuyerInfo = (props) => {
     const buyingfields = (index) => {
         if(index==0)
         {
-            props.navigation.navigate("home")
+            // props.navigation.navigate("home")
         }
         if(index==1)
         {

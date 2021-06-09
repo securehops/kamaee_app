@@ -13,6 +13,9 @@ export default SellerInfo = (props) => {
         }else if(index==2)
         {
             props.navigation.navigate("template")
+        }else if(index==4)
+        {
+            props.navigation.navigate("codinggigs")
         }
     }
     const [toggle, setToggle] = useState(false);
