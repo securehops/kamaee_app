@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, AsyncStorage, Image, ScrollView, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 
-export default ProfileHeader = ({buttonPressed}) => {
+export default ProfileHeader = ({buttonPressed, name}) => {
     return (
         <View style={styles.profile_container}>
             <View style={styles.profile_picture_container}>
@@ -15,7 +15,7 @@ export default ProfileHeader = ({buttonPressed}) => {
                 </TouchableWithoutFeedback>
             </View>
             <View style={styles.name_container}>
-                <Text style={styles.seller_name}>Zack Rider</Text>
+                <Text style={styles.seller_name}>{name}</Text>
                 <Text style={styles.seller_level}>Level 2 Seller</Text>
             </View>
         </View>

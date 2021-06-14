@@ -27,6 +27,7 @@ import Earnings from '../Earnings/Earnings'
 import Template from '../../Screens/OfferTemplate/Template'
 import SellerGig from '../../Screens/SellerGig/SellerGig'
 import SellerProfile from '../../Screens/SellerProfile/SellerProfile'
+import About from '../../Screens/Profile-Screen/About'
 const Stack = createStackNavigator();
 const OnBoardStack = createStackNavigator();
 export const MainStackNavigator = () => {
@@ -53,6 +54,7 @@ export const MainStackNavigator = () => {
       <Stack.Screen name="template" component={Template} />
       <Stack.Screen name="sellergig" component={SellerGig} />
       <Stack.Screen name="sellerprofile" component={SellerProfile} />
+      <Stack.Screen name="about" component={About} />
     </Stack.Navigator>
     
   );

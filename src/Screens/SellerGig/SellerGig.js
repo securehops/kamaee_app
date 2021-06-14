@@ -95,7 +95,7 @@ const SellerGig = (props) => {
 
         <View style={styles.container}>
             <View style={styles.profile_container}>
-                <HeaderProfile buttonPressed={() => props.navigation.navigate('sellerprofile')} />
+                <HeaderProfile name={'Zack Rider'} buttonPressed={() => props.navigation.navigate('sellerprofile')} />
             </View>
             <ScrollView>
                 <View style={styles.title}>

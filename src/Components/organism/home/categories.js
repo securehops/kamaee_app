@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 
-export default Categories = ({title, data}) => {
+export default Categories = ({ title, data, didPressed }) => {
 
     return (
         <View style={styles.category_container}>
@@ -13,14 +13,18 @@ export default Categories = ({title, data}) => {
                     horizontal={true}
                     data={data}
                     renderItem={({ item }) =>
-                        <View style={styles.sub_category}>
-                            <View style={styles.category_image_container}>
-                                <Image style={styles.category_image} source={item.image} />
+                        <TouchableOpacity
+                        onPress = {() => didPressed()}
+                        >
+                            <View style={styles.sub_category}>
+                                <View style={styles.category_image_container}>
+                                    <Image style={styles.category_image} source={item.image} />
+                                </View>
+                                <View style={styles.category_text_container}>
+                                    <Text style={styles.category_text}>{item.title}</Text>
+                                </View>
                             </View>
-                            <View style={styles.category_text_container}>
-                                <Text style={styles.category_text}>{item.title}</Text>
-                            </View>
-                        </View>
+                        </TouchableOpacity>
                     }
                 />
             </View>

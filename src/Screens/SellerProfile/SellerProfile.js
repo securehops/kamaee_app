@@ -10,7 +10,7 @@ const SellerProfile = () => {
 
         <View style={styles.container}>
             <View style={styles.profile_container}>
-                <HeaderProfile />
+                <HeaderProfile name={'Zack Rider'} />
             </View>
             <ScrollView>
                 <View style={styles.user_information_container}>

@@ -119,7 +119,7 @@ const BuyerHome = ({ didPressInput, didPressItem }) => {
                         <Text style={styles.subHeading2}> Let's find some services for your business</Text>
 
                     </View>
-                    <TouchableWithoutFeedback onPress={() => didPressItem()}>
+                    <TouchableWithoutFeedback>
                         <View style={styles.InputView}>
                             <Text style={styles.inputPlaceholder}> Looking for ... </Text>
                             <View style={styles.inputIcon}>
@@ -130,16 +130,16 @@ const BuyerHome = ({ didPressInput, didPressItem }) => {
                 </View>
                 <ScrollView style={styles.all_categories_container}>
                     <View style={styles.first_category_container}>
-                        <Categories title="Social Media Content" data={list} />
+                        <Categories title="Social Media Content" data={list} didPressed={() => didPressItem()} />
                     </View>
                     <View style={styles.first_category_container}>
-                        <Categories title="Brand Identity" data={list2} />
+                        <Categories title="Brand Identity" data={list2} didPressed={() => didPressItem()} />
                     </View>
                     <View style={styles.first_category_container}>
-                        <Categories title="Image Editing" data={list3} />
+                        <Categories title="Image Editing" data={list3} didPressed={() => didPressItem()} />
                     </View>
                     <View style={styles.first_category_container}>
-                        <Categories title="Print Design" data={list4} />
+                        <Categories title="Print Design" data={list4} didPressed={() => didPressItem()} />
                     </View>
                 </ScrollView>
             </View>

@@ -18,6 +18,15 @@ export default SellerInfo = (props) => {
             props.navigation.navigate("codinggigs")
         }
     }
+    const onPressGeneral = (index) => {
+        if(index==0)
+        {
+            props.navigation.navigate("about")
+        }else if(index==1)
+        {
+            props.navigation.navigate("payment")
+        }   
+    }
     const [toggle, setToggle] = useState(false);
     const [data, setData] = useState([
         { icon: "dollar-sign", icon_description: "Earnings", key: 1 },
@@ -30,9 +39,8 @@ export default SellerInfo = (props) => {
     const [data2, setData2] = useState([
         { icon: "person-sharp", icon_description: "My profile", key: 1 },
         { icon: "card", icon_description: "Payments", key: 2 },
-        { icon: "arrow-redo-circle-sharp", icon_description: "Invite friends", key: 4 },
-        { icon: "help-buoy", icon_description: "Support", key: 5 },
-
+        { icon: "arrow-redo-circle-sharp", icon_description: "Invite friends", key: 3 },
+        { icon: "help-buoy", icon_description: "Support", key: 4 },
     ]);
     return (
         <View>

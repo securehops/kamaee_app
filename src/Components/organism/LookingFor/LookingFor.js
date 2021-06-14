@@ -15,11 +15,11 @@ const LookingFor = ({ didPressItem }) => {
                     <Text style={[{ marginTop: 10 }, styles.title]} >Hello, Ashley</Text>
                 </View>
                 <View style={styles.input}>
-                    <InputSearch />
+                    {/* <InputSearch /> */}
                 </View>
 
             </View>
-            <TouchableWithoutFeedback style={{ height:'100%', marginTop:'-36%' }} >
+            <TouchableWithoutFeedback style={{ height:'100%', marginTop:'-46%' }} >
                 <SearchGigs onPress={() => didPressItem()} />
             </TouchableWithoutFeedback>
 
